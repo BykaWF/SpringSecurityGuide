@@ -3,7 +3,7 @@ Welcome to the Spring Security 6 Examples repository! In Spring Security 6, we'v
 
 ### Basic Authentication
 
-To learn more about implementing Basic Authentication in this project, please refer to the [`basic-auth` branch](../../tree/basic-auth).
+To learn more about implementing Basic Authentication in this project, please refer to the [`Basic Auth branch`](https://github.com/BykaWF/SpringSecurityGuide/tree/Basic-Auth).
 
 In the `basic-auth` branch, you will find code examples and detailed instructions on setting up Basic Authentication for your application.
 
