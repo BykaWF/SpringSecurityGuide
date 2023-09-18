@@ -1,5 +1,5 @@
 # SpringSecurityGuide
-Welcome to the Spring Security 6 Examples repository! In Spring Security 6, we've witnessed significant changes, notably the deprecation of the trusted `WebSecurityConfigurerAdapter` in favor of a more streamlined and powerful approach to securing your web applications. This repository serves as a comprehensive resource for developers seeking to grasp the latest techniques and best practices in securing their Spring-based web applications.
+Welcome to the Spring Security Examples repository! In Spring Security, we've witnessed significant changes, notably the deprecation of the trusted `WebSecurityConfigurerAdapter` in favor of a more streamlined and powerful approach to securing your web applications. This repository serves as a comprehensive resource for developers seeking to grasp the latest techniques and best practices in securing their Spring-based web applications.
 
 ### Basic Authentication
 
