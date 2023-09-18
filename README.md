@@ -7,5 +7,5 @@ To learn more about implementing Basic Authentication in this project, please re
 
 In the `basic-auth` branch, you will find code examples and detailed instructions on setting up Basic Authentication for your application.
 
-### PermiAll()
+### PermitAll()
 With Basic Auth we should be authorized to any resourse. But if we want to have resources were any user can be without any permission. Please refer to the [`PermitAll() branch`](https://github.com/BykaWF/SpringSecurityGuide/tree/PermitAll). 
