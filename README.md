@@ -35,12 +35,12 @@ Let's add a new User with a new role in our SecurityConfig and create enums for 
         UserDetails bogdan = User.builder()
                 .username("Bogdan")
                 .password(passwordEncoder.encode("password"))
-                .roles("USER")
+                .roles(USER.name())
                 .build();
         UserDetails admin = User.builder() 
                 .username("John")
                 .password(passwordEncoder.encode("password"))
-                .roles("ADMIN")
+                .roles(ADMIN.name())
                 .build();
         return new InMemoryUserDetailsManager(bogdan);
     }
