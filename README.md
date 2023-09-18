@@ -114,5 +114,7 @@ public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exce
     }
 ```
 We have added auth.requestMatchers("/api/**").hasRole(USER.name()); that tells us to get access to our user endpoints can only who hasRole(User.name())
+
+
 ![image](https://github.com/BykaWF/SpringSecurityGuide/assets/119706327/b6cf83ab-4bf7-46dd-9d1f-7444fa1535e8)
 
