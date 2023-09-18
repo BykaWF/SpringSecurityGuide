@@ -12,3 +12,9 @@ With Basic Auth we should be authorized to any resourse. But if we want to have 
 
 ### Multiple Security Configuration
 Do you want to use different types of authentication? please refer to the [`Multiple Security branch`](https://github.com/BykaWF/SpringSecurityGuide/tree/MultipleConfiguration).
+
+# Users' Roles and Authorities
+
+Previously to get access to any resource we should use a generated password in our console and in the field username pass user. But if you want to create your User with username and password, role and so forth. You can store your User in memory or your database.
+
+- Role-based Auth: [Role Based Auth branch](https://github.com/BykaWF/SpringSecurityGuide/tree/Role_Auth).
