@@ -1,39 +1,10 @@
 # SpringSecurityGuide
-Learn how to protect your web application with Spring Security 6.0
+Welcome to the Spring Security 6 Examples repository! In Spring Security 6, we've witnessed significant changes, notably the deprecation of the trusted `WebSecurityConfigurerAdapter` in favor of a more streamlined and powerful approach to securing your web applications. This repository serves as a comprehensive resource for developers seeking to grasp the latest techniques and best practices in securing their Spring-based web applications.
 
-# Basic Auth
-### How Basic Auth work:
-![Basic Auth](https://github.com/BykaWF/SpringSecurityGuide/assets/119706327/a3d0a8eb-e7ab-48e2-8f43-6abdab695b75)
+### Basic Authentication
 
-When you send a request to a secure server and receive a `401 (Unauthorized)` response, it's the server's way of asking for your **username** and **password**. It checks these **credentials** to determine if you're authorized to access the requested resource. If your credentials are valid, you'll be granted access to the resource.
+To learn more about implementing Basic Authentication in this project, please refer to the [`basic-auth` branch](../../tree/basic-auth).
 
+In the `basic-auth` branch, you will find code examples and detailed instructions on setting up Basic Authentication for your application.
 
-If you just add **Spring Security** dependency we will get this page and generated password in console:
-![Before](https://github.com/BykaWF/SpringSecurityGuide/assets/119706327/b9b83016-50f4-4265-b1b8-743c4985fa9b)
-
-If you want add Basic Auth to your application:
-```
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig {
-
-    /**
-     *  @Explanation: anyRequest() should be authenticated() and for getting pop up Basic Auth you need add httpBasic()
-     *
-     *  @Note: You can't log out after you have authenticated
-     */
-    @Bean
-    public SecurityFilterChain formLogin(HttpSecurity http) throws Exception{
-        http.
-                authorizeHttpRequests(authorize -> authorize
-                        .anyRequest()
-                        .authenticated()
-                )
-                .httpBasic(Customizer.withDefaults());
-        return http.build();
-    }
-}
-```
-And magic happened:
-![After](https://github.com/BykaWF/SpringSecurityGuide/assets/119706327/753b8439-08f1-45c0-8a4b-0ad90920bd73)
 
