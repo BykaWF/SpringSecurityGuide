@@ -9,3 +9,6 @@ In the `basic-auth` branch, you will find code examples and detailed instruction
 
 ### PermitAll()
 With Basic Auth we should be authorized to any resourse. But if we want to have resources were any user can be without any permission. Please refer to the [`PermitAll() branch`](https://github.com/BykaWF/SpringSecurityGuide/tree/PermitAll). 
+
+### Multiple Security Configuration
+Do you want to use different types of authentication? please refer to the [`Multiple Security branch`](https://github.com/BykaWF/SpringSecurityGuide/tree/MultipleConfiguration).
