@@ -35,14 +35,14 @@ Let's add a new User with a new role in our SecurityConfig and create enums for 
         UserDetails bogdan = User.builder()
                 .username("Bogdan")
                 .password(passwordEncoder.encode("password"))
-                .roles("USER")
+                .roles(USER.name())
                 .build();
         UserDetails admin = User.builder() 
                 .username("John")
                 .password(passwordEncoder.encode("password"))
-                .roles("ADMIN")
+                .roles(ADMIN.name())
                 .build();
-        return new InMemoryUserDetailsManager(bogdan);
+        return new InMemoryUserDetailsManager(bogdan,admin);
     }
 ```
 ```
@@ -115,6 +115,6 @@ public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exce
 ```
 We have added auth.requestMatchers("/api/**").hasRole(USER.name()); that tells us to get access to our user endpoints can only who hasRole(User.name())
 
+![image](https://github.com/BykaWF/SpringSecurityGuide/assets/119706327/818ee8d1-b869-401a-8ad8-4489632b4bb9)
 
-![image](https://github.com/BykaWF/SpringSecurityGuide/assets/119706327/b6cf83ab-4bf7-46dd-9d1f-7444fa1535e8)
 
