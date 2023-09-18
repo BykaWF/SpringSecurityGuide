@@ -1,11 +1,9 @@
 package Guide.SecuritySpring.config;
 
-import Guide.SecuritySpring.model.Role;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -39,13 +37,20 @@ public class SecurityConfig {
         UserDetails bogdan = User.builder()
                 .username("Bogdan")
                 .password(passwordEncoder.encode("password"))
-                .roles("USER")
+                .roles(USER.name())
                 .build();
         UserDetails admin = User.builder()
                 .username("John")
                 .password(passwordEncoder.encode("password"))
-                .roles("ADMIN")
+                .roles(ADMIN.name())
                 .build();
+        UserDetails yaroslav = User.builder()
+                .username("Yaroslav")
+                .password(passwordEncoder.encode("password123"))
+                .roles(ADMIN.name())
+                .build();
+
+
         return new InMemoryUserDetailsManager(bogdan);
 
     }
