@@ -12,6 +12,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
+    @GetMapping("/greeting")
+    public String userGreeting(){
+        return "I'm secured";
+    }
 
     private static final List<User> USER_LIST = Arrays.asList(
             new User(1,"Bogdan"),
@@ -28,10 +32,5 @@ public class UserController {
                 .orElseThrow(() -> new IllegalStateException(
                         "User doesn't exist"
                 ));
-    }
-
-    @GetMapping("/greeting")
-    public String userGreeting(){
-        return "I'm secured";
     }
 }

@@ -5,10 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping()
 public class HomeController {
     @GetMapping("/")
-    public String index(){
+    public String homeGreeting(){
         return "Hello, I'm not secured";
     }
 }
