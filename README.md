@@ -42,7 +42,7 @@ Let's add a new User with a new role in our SecurityConfig and create enums for 
                 .password(passwordEncoder.encode("password"))
                 .roles(ADMIN.name())
                 .build();
-        return new InMemoryUserDetailsManager(bogdan);
+        return new InMemoryUserDetailsManager(bogdan,admin);
     }
 ```
 ```
