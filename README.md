@@ -28,3 +28,4 @@ In this case, our Seller has the role of Admin and permission to write and read 
 
 
 - Role-based Auth: [Role Based Auth branch](https://github.com/BykaWF/SpringSecurityGuide/tree/Role_Auth).
+- Permission-based Auth: [Permission Based Auth branch](https://github.com/BykaWF/SpringSecurityGuide/tree/Permission_Based_Authentication)
