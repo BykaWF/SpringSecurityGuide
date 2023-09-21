@@ -181,3 +181,50 @@ Let's try to send a POST request to our server and we will start with our manage
 -> However, our admin John can do it: 
 ![image](https://github.com/BykaWF/SpringSecurityGuide/assets/119706327/ea6e073a-3f2b-4c4e-8495-4c5341fb833f)
 
+## @PreAuthorize
+
+Annotation for specifying a method access-control expression which will be evaluated to decide whether a method invocation is allowed or not.
+
+The first thing you need to add to SecurityConfig new annotation - @EnableMethodSecurity
+```
+@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity <------- 
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exception {
+        // your code
+    }
+```
+Then go to CustomerController and let's consider the POST request.  We take 'admin:create' from our Permission.class
+```
+    @PostMapping("/new")
+    @PreAuthorize("hasAuthority('admin:create')") <------
+    public ResponseEntity<Customer> createCustomer(@RequestBody CreateCustomerRequest request) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println("Authentication: " + authentication.getName());
+        System.out.println("Authorities: " + authentication.getAuthorities());
+
+        return ResponseEntity.ok(customerService.createCustomer(request.toCustomer()));
+    }
+```
+```
+public enum Permission {
+    ADMIN_READ("admin:read"),
+    ADMIN_UPDATE("admin:update"),
+    ADMIN_CREATE("admin:create"), <-------
+    ADMIN_DELETE("admin:delete"),
+    ..........
+}
+```
+Also, you can use *roles*:
+```
+    @GetMapping("/getCustomers")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MANAGER_TRAINEE')")<---
+    public List<Customer> getAllUsers() {
+        return customerService.getCustomers();
+    }
+```
+
