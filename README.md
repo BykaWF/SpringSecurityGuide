@@ -197,10 +197,10 @@ public class SecurityConfig {
         // your code
     }
 ```
-Then go to CustomerController and let's consider the POST request.  We take 'admin:create' from our Permission.class
+Then go to CustomerController and let's consider the POST request.  We take 'ADMIN_CREATE' from our Permission.class
 ```
     @PostMapping("/new")
-    @PreAuthorize("hasAuthority('admin:create')") <------
+    @PreAuthorize("hasAuthority('ADMIN_CREATE')") <------
     public ResponseEntity<Customer> createCustomer(@RequestBody CreateCustomerRequest request) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -222,7 +222,7 @@ public enum Permission {
 Also, you can use *roles*:
 ```
     @GetMapping("/getCustomers")
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MANAGER_TRAINEE')")<---
+    @PreAuthorize("hasAnyRole('ADMIN','MANAGER_TRAINEE')")<---
     public List<Customer> getAllUsers() {
         return customerService.getCustomers();
     }
