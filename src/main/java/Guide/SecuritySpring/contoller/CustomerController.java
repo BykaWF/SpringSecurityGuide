@@ -25,7 +25,7 @@ public class CustomerController {
     }
 
     @PostMapping("/new")
-    @PreAuthorize("hasAuthority('admin:create')")
+    @PreAuthorize("hasAuthority('ADMIN_CREATE')")
     public ResponseEntity<Customer> createCustomer(@RequestBody CreateCustomerRequest request) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -36,7 +36,7 @@ public class CustomerController {
     }
 
     @GetMapping("/getCustomers")
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MANAGER_TRAINEE')")
+    @PreAuthorize("hasAnyRole('ADMIN','MANAGER_TRAINEE')")
     public List<Customer> getAllUsers() {
         return customerService.getCustomers();
     }
