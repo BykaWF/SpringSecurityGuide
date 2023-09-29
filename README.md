@@ -30,6 +30,9 @@ In this case, our Seller has the role of Admin and permission to write and read 
 - Role-based Auth: [Role Based Auth branch](https://github.com/BykaWF/SpringSecurityGuide/tree/Role_Auth).
 - Permission-based Auth: [Permission Based Auth branch](https://github.com/BykaWF/SpringSecurityGuide/tree/Permission_Based_Authentication)
 
+## DAO Auth
+*JPA Authentication*: We'll dive into storing user information and credentials in a database, allowing for more flexibility in managing users in [JPA Auth branch](https://github.com/BykaWF/SpringSecurityGuide/tree/JPA-Auth). 
+
 ## In the next parts, we will delve deeper into additional important security concepts, including:
 
 - *CSRF* (Cross-Site Request Forgery): We'll learn how to protect our web applications from malicious requests that can trick users into performing actions without their consent.
