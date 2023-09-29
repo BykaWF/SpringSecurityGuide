@@ -34,8 +34,4 @@ In this case, our Seller has the role of Admin and permission to write and read 
 *JPA Authentication*: We'll dive into storing user information and credentials in a database, allowing for more flexibility in managing users in [JPA Auth branch](https://github.com/BykaWF/SpringSecurityGuide/tree/JPA-Auth). 
 
 ## In the next parts, we will delve deeper into additional important security concepts, including:
-
-- *CSRF* (Cross-Site Request Forgery): We'll learn how to protect our web applications from malicious requests that can trick users into performing actions without their consent.
-- *Form-Based Authentication*: We'll explore how to create custom login forms and authenticate users using their credentials.
-- *Database Authentication*: We'll dive into storing user information and credentials in a database, allowing for more flexibility in managing users.
 - *JSON Web Tokens (JWT)*: We'll discover how to implement authentication and authorization using JWTs, which are becoming increasingly popular for securing modern web applications.
