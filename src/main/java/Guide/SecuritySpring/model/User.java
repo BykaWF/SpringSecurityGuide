@@ -13,20 +13,21 @@ import lombok.NoArgsConstructor;
 @Transactional
 @Data
 @NoArgsConstructor
-@Table(name = "customer_details")
+@Table(name = "users")
 @AllArgsConstructor
 @Builder
-public class Customer {
+public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "csr_id")
-    private Long customerId;
+    @Column(name = "user_id")
+    private Long userId;
     private String username;
+    private String password;
     private String email;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_add_id")
     private Address address;
 
-
+    private String roles;
 }
